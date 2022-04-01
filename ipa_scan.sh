@@ -38,7 +38,8 @@ for filepath in `find $inputDir`; do
 done
 
 if [ "$2" != "" ]; then
-  find $outputDir -name "*" | xargs grep $2 > ${outputDir}${MATCH} 
+  find $outputDir -name "*" | xargs grep -i $2 > ${outputDir}${MATCH}
+  find $inputDir -name "*" | xargs grep -i $2 >> ${outputDir}${MATCH}
 fi
 
 echo "*******************************************"
